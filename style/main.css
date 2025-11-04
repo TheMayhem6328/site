@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Jersey+10&family=Pixelify+Sans:wght@400..700&display=swap");
+
+body {
+  margin: 0px;
+  width: 100dvw;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("/img/background/1.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-style: solid;
+  border-color: #2d2d2d;
+  border-radius: 16px;
+  padding: 1em 2em;
+  -webkit-backdrop-filter: blur(15px) invert(20%) brightness(130%);
+  backdrop-filter: blur(15px) invert(20%) brightness(130%);
+}
+
+h1 {
+  font-family: "Pixelify Sans", sans-serif;
+  font-size: xx-large;
+  font-weight: 700;
+  font-style: bold;
+  color: #2d2d2d;
+}
+
+p {
+  font-family: "Jersey 10", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #2d2d2d;
+}
