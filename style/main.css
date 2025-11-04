@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Jersey+10&family=Pixelify+Sans:wght@400..700&display=swap");
 
+.pixel-corners::after,
+.pixel-corners--wrapper::after {
+  background: #57ffb6;
+}
+
 body {
   margin: 0px;
   width: 100dvw;
@@ -19,25 +24,90 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-style: solid;
-  border-color: #2d2d2d;
-  border-radius: 16px;
-  padding: 1em 2em;
-  -webkit-backdrop-filter: blur(15px) invert(20%) brightness(130%);
-  backdrop-filter: blur(15px) invert(20%) brightness(130%);
+  padding: 1em;
+  background-color: rgba(66, 181, 102, 0.373);
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+  isolation: isolate;
+  will-change: backdrop-filter;
+  position: relative;
+  color: #22e67a;
+  text-shadow: rgba(0, 0, 0, 0.322) 2px 2px 10px;
+  text-align: center;
+  gap: 1em;
 }
 
 h1 {
   font-family: "Pixelify Sans", sans-serif;
+  font-style: bold;
   font-size: xx-large;
   font-weight: 700;
-  font-style: bold;
-  color: #2d2d2d;
 }
 
 p {
   font-family: "Jersey 10", sans-serif;
-  font-weight: 400;
   font-style: normal;
-  color: #2d2d2d;
+  font-size: normal;
+  font-weight: 400;
+}
+
+@media (max-width: 400px) {
+  .pixel-corners,
+  .pixel-corners--wrapper,
+  .pixel-corners--wrapper .pixel-corners {
+    clip-path: none;
+    border: initial;
+  }
+  .pixel-corners::after,
+  .pixel-corners--wrapper::after {
+    clip-path: none;
+    opacity: 0%;
+  }
+  main {
+    border: solid !important;
+    border-width: 4px 0px !important;
+    border-color: #57ffb6 !important;
+    width: 100dvw;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .pixel-corners::after,
+  .pixel-corners--wrapper::after {
+    background: #49896c;
+  }
+  body {
+    position: relative;
+  }
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    pointer-events: none;
+    z-index: 0;
+  }
+  main {
+    -webkit-backdrop-filter: blur(15px) brightness(70%);
+    backdrop-filter: blur(15px) brightness(70%);
+    color: #5fbc89;
+    border-color: #49896c !important;
+  }
+}
+
+@media print {
+  body {
+    background-image: none;
+  }
+  .pixel-corners::after,
+  .pixel-corners--wrapper::after {
+    background: #4f4f4f;
+  }
+  main {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    background-color: white;
+    color: #000000;
+    text-shadow: none;
+  }
 }
