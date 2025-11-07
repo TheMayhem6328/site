@@ -4,14 +4,13 @@
 <head>
     <meta charset="utf-8">
     <title>Mayhem's Website</title>
-    <link rel="stylesheet" href="/style/pixel.css">
-    <link rel="stylesheet" href="/style/main.css">
+    <link rel="stylesheet" href="/style/main.css" >
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="no">
+    <meta name="apple-mobile-web-app-capable" content="no">
     <meta name="application-name" content="Mayhem">
     <meta name="apple-mobile-web-app-title" content="Mayhem">
     <meta name="theme-color" content="#79ccdc">
@@ -22,10 +21,27 @@
 </head>
 
 <body>
-    <main class="pixel-corners">
-        <h1>Mayhem's Website</h1>
-        <p>We be cooking - stay tuned for more</p>
+    <header id="header">
+        <section id="hero">
+            <img src="/img/face.jpg" alt="My Face" height="256px">
+            <div id="hero-text">
+                <h1>Greetings</h1>
+                <p>I’m<br>Zahiruzzaman Chowdhury</p>
+            </div>
+        </section>
+        <picture id="down-arrow">
+            <source srcset="/img/dark/arrow-down.png" media="(prefers-color-scheme: dark)">
+            <img src="/img/light/arrow-down.png" width="70" alt="">
+        </picture>
+        </main>
+    </header>
+    <main>
+        <section>
+            <h2>This website is still being built</h2>
+            <p>Check back later</p>
+        </section>
     </main>
+    <script src="/script/main.js"></script>
 </body>
 
 </html>
