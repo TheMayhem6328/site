@@ -12,7 +12,6 @@ window.addEventListener('scroll', () => {
     const scale = 1 - 0.3 * progress;
     const opacity = 1 - progress;
     const blurAmount = Math.floor(25 * progress)
-    const backgroundSize = 1 + 0.4*progress
 
     heroElement.style.transform = `scale(${scale})`;
     heroElement.style.opacity = opacity;
@@ -20,7 +19,7 @@ window.addEventListener('scroll', () => {
 });
 
 document.getElementById("down-arrow").addEventListener('click', () => {
-    const scrollY = window.innerHeight + 50
+    const scrollY = window.innerHeight
     scrollTo({
         top: scrollY,
         behavior: "smooth"

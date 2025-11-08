@@ -1,27 +1,37 @@
 @import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap");
 
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
 body {
   margin: 0px;
   background-color: #445b2e;
   scroll-snap-type: y mandatory;
-  scroll-snap-align: start;
+  text-shadow: rgba(0, 0, 0, 0.6) 4px 4px 27px;
 }
 
 header {
   /* Size */
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  min-height: 100vh;
   /* Layout */
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 60px;
+  position: relative;
   /* Background */
   background-image: url(/img/light/hero-bg.png);
   background-size: cover;
   image-rendering: pixelated;
   -webkit-backdrop-filter: blur(500px);
   backdrop-filter: blur(500px);
+  scroll-snap-align: start;
 }
 
 @keyframes fadein {
@@ -45,7 +55,7 @@ header * {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  width: calc(100vw - 100px);
+  max-width: calc(100% - 100px);
   height: 100vh;
   gap: 50px;
   padding: 0px 50px;
@@ -75,7 +85,6 @@ header * {
   column-gap: 50px;
   /* Text styling */
   color: #c9f2ce;
-  text-shadow: rgba(0, 0, 0, 0.6) 4px 4px 27px;
 }
 
 #hero-text h1 {
@@ -108,8 +117,8 @@ header * {
 
 picture#down-arrow {
   image-rendering: pixelated;
-  position: relative;
   bottom: 15vh;
+  position: absolute;
   animation-name: down-arrow;
   animation-duration: 2000ms;
   animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -119,7 +128,9 @@ picture#down-arrow {
 
 main section {
   height: 100vh;
-  width: calc(100vw - 100px);
+  width: calc(100% - 100px);
+  max-width: 1600px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   font-family: "Pixelify Sans", sans-serif;
@@ -127,9 +138,9 @@ main section {
   justify-content: center;
   color: #c9f2ce;
   gap: 10px;
-  text-shadow: rgba(0, 0, 0, 0.6) 4px 4px 27px;
   text-align: center;
   padding: 0px 50px;
+  scroll-snap-align: start;
 }
 
 main section h2 {
