@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap");
-
+/* Basics */
 html {
   box-sizing: border-box;
 }
@@ -12,10 +11,10 @@ html {
 body {
   margin: 0px;
   background-color: #445b2e;
-  scroll-snap-type: y mandatory;
   text-shadow: rgba(0, 0, 0, 0.6) 4px 4px 27px;
 }
 
+/* Hero Content */
 header {
   /* Size */
   width: 100%;
@@ -31,7 +30,6 @@ header {
   image-rendering: pixelated;
   -webkit-backdrop-filter: blur(500px);
   backdrop-filter: blur(500px);
-  scroll-snap-align: start;
 }
 
 @keyframes fadein {
@@ -104,7 +102,7 @@ header * {
     filter: opacity(40%);
   }
   40% {
-    transform: translateY(100px);
+    transform: translateY(5vh);
     filter: opacity(100%);
   }
   60% {
@@ -117,7 +115,7 @@ header * {
 
 picture#down-arrow {
   image-rendering: pixelated;
-  bottom: 15vh;
+  bottom: 10vh;
   position: absolute;
   animation-name: down-arrow;
   animation-duration: 2000ms;
@@ -134,21 +132,24 @@ main section {
   display: flex;
   flex-direction: column;
   font-family: "Pixelify Sans", sans-serif;
+  color: #c9f2ce;
+}
+
+main section#title-only {
   align-items: center;
   justify-content: center;
-  color: #c9f2ce;
   gap: 10px;
   text-align: center;
   padding: 0px 50px;
   scroll-snap-align: start;
 }
 
-main section h2 {
+main section#title-only h2 {
   font-weight: 700;
   font-size: clamp(3rem, 2.4444rem + 2.963vw, 6rem);
   margin-block: unset;
 }
-main section p {
+main section#title-only p {
   font-weight: 400;
   font-size: clamp(1.25rem, 1.1111rem + 0.7407vw, 2rem);
   margin-block: unset;
@@ -164,7 +165,7 @@ main section p {
       filter: opacity(40%);
     }
     40% {
-      transform: translateY(30px);
+      transform: translateY(1vh);
       filter: opacity(100%);
     }
     60% {
@@ -191,22 +192,45 @@ main section p {
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 830px) {
   #hero {
     gap: 30px;
-    flex-direction: column;
   }
   #hero img {
-    scale: 1.2;
-  }
-  #hero-text {
-    text-align: center;
+    scale: 0.8;
   }
   #hero-text h1 {
     font-size: 64px;
   }
   #hero-text p {
     font-size: 32px;
+  }
+}
+
+@media (max-width: 830px) and (orientation: portrait) {
+  #hero {
+    flex-direction: column;
+  }
+  #hero img {
+    scale: 1.0;
+  }
+  #hero-text {
+    text-align: center;
+  }
+}
+
+@media (max-width: 680px) and (orientation: landscape) {
+  #hero {
+    gap: 30px;
+  }
+  #hero img {
+    scale: 0.7;
+  }
+  #hero-text h1 {
+    font-size: 48px;
+  }
+  #hero-text p {
+    font-size: 28px;
   }
 }
 
