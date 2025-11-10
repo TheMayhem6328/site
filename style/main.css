@@ -16,7 +16,26 @@ body {
   text-shadow: rgba(0, 0, 0, 0.6) 4px 4px 27px;
 }
 
-/* Hero Content */
+picture#down-arrow {
+  image-rendering: pixelated;
+  bottom: 10vh;
+  position: absolute;
+  animation-name: bounce-hint-down;
+  animation-duration: 2000ms;
+  animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+  animation-iteration-count: infinite;
+  cursor: pointer;
+}
+
+/* @keyframes blur-25 {
+  from {
+    filter: blur(0px);
+  }
+  to {
+    filter: blur(25px);
+  }
+} */
+
 header {
   /* Size */
   width: 100%;
@@ -30,12 +49,21 @@ header {
   background-image: url(/img/light/hero-bg.png);
   background-size: cover;
   image-rendering: pixelated;
-  -webkit-backdrop-filter: blur(500px);
-  backdrop-filter: blur(500px);
+  /* Animation */
+  /* TODO: This does not work as expected */
+  /* To attempt to fix this, uncomment this
+  and the appropriate keyframe (Line 30) */
+  /* animation-name: blur-25;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-timeline: view();
+  animation-range: entry 0% exit 100%; */
 
   * {
     /* Animation */
-    animation: 1s cubic-bezier(0.23, 1, 0.32, 1) 0s 1 fadein;
+    animation-duration: 1s;
+    animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+    animation-name: fadein-down;
   }
 
   #hero {
@@ -86,20 +114,9 @@ header {
       }
     }
   }
-
-  picture#down-arrow {
-    image-rendering: pixelated;
-    bottom: 10vh;
-    position: absolute;
-    animation-name: bounce-hint-down;
-    animation-duration: 2000ms;
-    animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
-    animation-iteration-count: infinite;
-    cursor: pointer;
-  }
 }
 
-@keyframes up-fadein-down {
+@keyframes fadein-down {
   0% {
     transform: translateY(-10%);
     opacity: 40%;
@@ -127,34 +144,35 @@ header {
   }
 }
 
-main section {
-  height: 100vh;
-  width: calc(100% - 100px);
-  max-width: 1600px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  font-family: "Pixelify Sans", sans-serif;
-  color: #c9f2ce;
+main {
+  section {
+    height: 100vh;
+    width: calc(100% - 100px);
+    max-width: 1600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    font-family: "Pixelify Sans", sans-serif;
+    color: #c9f2ce;
 
-  &.title-only {
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    text-align: center;
-    padding: 0px 50px;
-    scroll-snap-align: start;
+    &.title-subtitles {
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      text-align: center;
+      padding: 0px 50px;
 
-    h2 {
-      font-weight: 700;
-      font-size: clamp(3rem, 2.4444rem + 2.963vw, 6rem);
-      margin-block: unset;
-    }
+      h2 {
+        font-weight: 700;
+        font-size: clamp(3rem, 2.4444rem + 2.963vw, 6rem);
+        margin-block: unset;
+      }
 
-    p {
-      font-weight: 400;
-      font-size: clamp(1.25rem, 1.1111rem + 0.7407vw, 2rem);
-      margin-block: unset;
+      p {
+        font-weight: 400;
+        font-size: clamp(1.25rem, 1.1111rem + 0.7407vw, 2rem);
+        margin-block: unset;
+      }
     }
   }
 }
