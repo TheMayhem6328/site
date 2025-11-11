@@ -42,25 +42,26 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="msapplication-starturl" content="/">
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="/style/main.css">
+    <link rel="preload" as="style" href="/style/main.css">
+    <link rel="stylesheet"href="/style/main.css">
 </head>
 
 <body>
-    <header id="header">
-        <section id="hero">
-            <img src="/img/face.jpg" alt="My Face" height="256px">
-            <div id="hero-text">
+    <header id="root-header">
+        <section id="root-hero">
+            <img src="/img/res/face.jpg" alt="My Face" height="256px">
+            <div id="root-hero-text">
                 <h1>Greetings</h1>
                 <p>I’m<br>Zahiruzzaman Chowdhury</p>
             </div>
         </section>
         <picture id="down-arrow">
-            <source srcset="/img/dark/arrow-down.png" media="(prefers-color-scheme: dark)">
-            <img src="/img/light/arrow-down.png" width="70" alt="">
+            <source srcset="/img/res/dark/arrow-down.png" media="(prefers-color-scheme: dark)">
+            <img src="/img/res/light/arrow-down.png" width="70" alt="">
         </picture>
     </header>
     <main>
-        <section class="title-subtitles">
+        <!-- <section class="title-subtitles">
             <h2>Projects</h2>
             <p>RoboSoccer</p>
             <p>PseudoInterpreter</p>
@@ -91,6 +92,51 @@
         <section class="title-subtitles">
             <h2>This website is still being built</h2>
             <p>Please, check back later</p>
+        </section> -->
+        <section class="column-h-text">
+            <div class="title-subtitles">
+                <h2>Event Participation</h2>
+            </div>
+            <div class="column-h-text-div">
+                <div class="column-h-text-item">
+                    <p class="subtitle">Scholastica - 2022 and 2023</p>
+                    <h3>PyFest I and II</h3>
+                    <p class="subtitle">First Position - 2022,<br>First Position - 2023</p>
+                    <p>
+                        On both years, they were a week-long programming competition where participants
+                        had to compete against 25 groups of two to solve various problems, exploring
+                        concepts like safe input handling, CSV handling, regex, ASCII characters, and
+                        elemental cryptography. Additionally, tools like git and TUI libraries
+                        like ncurses were also used.
+                    </p>
+                    <a href="#">Learn More...</a>
+                </div>
+                <div class="column-h-text-item">
+                    <p class="subtitle">Scholastica - 2024</p>
+                    <h3>Technathon</h3>
+                    <p class="subtitle">Champion in Olympiad,<br>2nd Runner Up in Programming Contest</p>
+                    <p>
+                        Consisting of both competitive programming and two olympiads, this event helped
+                        participants, participating individually, delve into core computer science concepts
+                        which were additionally covered in CAIE A levels.
+                    </p>
+                    <a href="#">Learn More...</a>
+                </div>
+                <div class="column-h-text-item">
+                    <p class="subtitle">North South University - 2025</p>
+                    <h3>NSU TechFest</h3>
+                    <p class="subtitle">Participated in Robotics Segment</p>
+                    <p>
+                        Held by the Computer Science and Engineering club, this was a multi-segmented event,
+                        with nationwide participation. It consisted of segments involving hackathon, e-sports,
+                        and robotics. Before the event was held, a workshop was organized for students at North
+                        South, introducing us to the basics of robotics, including Arduino and ESP32 programming, 
+                        From there, I also explored Computer Aided Design (CAD) software like AutoCAD and Fusion
+                        360
+                    </p>
+                    <a href="#">Learn More...</a>
+                </div>
+            </div>
         </section>
     </main>
     <script src="/script/main.js"></script>

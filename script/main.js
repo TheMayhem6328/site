@@ -1,7 +1,6 @@
-const heroElement = document.getElementById("hero");
-const headerElement = document.getElementById("header");
 var cssScrollSupport = false;
 
+// Scroll
 if (CSS.supports('animation-timeline', 'scroll()')) {
     console.info('CSS function scroll() is supported in this browser. Will use CSS scroll animation once implemented');
     // Set to true to try to attempt CSS based animation again
@@ -11,6 +10,8 @@ if (CSS.supports('animation-timeline', 'scroll()')) {
     console.warn('CSS function scroll() is not supported in this browser. Using JS-based scroll animation');
 }
 
+const heroElement = document.getElementById("root-hero");
+const headerElement = document.getElementById("root-header");
 if (!cssScrollSupport) {
     window.addEventListener('scroll', () => {
         const start = 0;
@@ -30,8 +31,9 @@ if (!cssScrollSupport) {
     });
 }
 
+// Down arrow interactivity
 document.getElementById("down-arrow").addEventListener('click', () => {
-    const scrollY = window.innerHeight
+    const scrollY = window.innerHeight + 100
     scrollTo({
         top: scrollY,
         behavior: "smooth"

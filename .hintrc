@@ -16,9 +16,11 @@
       {
         "ignore": [
           "animation-timeline",
-          "animation-timeline: scroll(y)"
+          "animation-timeline: scroll(y)",
+          ""
         ]
       }
-    ]
+    ],
+    "css-prefix-order": "off"
   }
 }
