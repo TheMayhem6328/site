@@ -10,13 +10,27 @@ html {
 h1,
 h2,
 h3,
-p {
+p,
+code {
   margin-block: unset;
+}
+
+code {
+  font-family: "VT323", monospace;
+  font-weight: 400;
+  font-style: normal;
+  background-color: hsl(91, 33%, 17%);
+  border-style: solid;
+  border-width: 1px;
+  border-color: hsl(91, 33%, 22%);
+  padding: 0px 5px;
+  border-radius: 5px;
+  font-size: 0.9em;
 }
 
 body {
   margin: 0px;
-  background-color: #445b2e;
+  background-color: hsl(91, 33%, 27%);
   text-shadow: rgba(0, 0, 0, 0.6) 4px 4px 27px;
 }
 
@@ -180,10 +194,18 @@ main {
       &.subtitle {
         font-size: clamp(0.75rem, 0.6111rem + 0.7407vw, 1.5rem);
       }
+      a,
+      span.inline-button {
+        font-size: inherit;
+        cursor: pointer;
+      }
     }
 
-    a {
-      text-decoration: underline;
+    a,
+    span.inline-button {
+      text-decoration-line: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
       font-size: clamp(1rem, 0.8148rem + 0.9877vw, 2rem);
       font-weight: 500;
       color: #e6e6e6;
@@ -216,6 +238,7 @@ main {
         flex-wrap: wrap;
         gap: 50px;
         div.column-h-text-item {
+          width: 100%;
           display: flex;
           max-width: 500px;
           flex-direction: column;
@@ -391,6 +414,11 @@ main {
 @media (prefers-color-scheme: dark) {
   body {
     background-color: #04192e;
+  }
+
+  code {
+    background-color: hsl(210, 84%, 0%);
+    border-color: hsl(210, 84%, 5%);
   }
 
   header#root-header {

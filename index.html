@@ -41,12 +41,13 @@
     <meta name="msapplication-navbutton-color" content="#79ccdc">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="msapplication-starturl" content="/">
-    <!-- Fonts -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
-    <link rel="preload" as="style" href="/style/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=VT323&display=swap"
+        rel="stylesheet">
     <!-- Stylesheets -->
+    <link rel="preload" as="style" href="/style/main.css">
     <link rel="stylesheet" href="/style/main.css">
 </head>
 
@@ -66,12 +67,6 @@
     </header>
     <main>
         <!-- <section class="title-subtitles">
-            <h2>Projects</h2>
-            <p>RoboSoccer</p>
-            <p>PseudoInterpreter</p>
-            <p>Stagger</p>
-        </section>
-        <section class="title-subtitles">
             <h2>Skills</h2>
             <p>Proficient in Python</p>
             <p>Novice in HTML/CSS/JS</p>
@@ -87,6 +82,48 @@
             <p>A level at Scholastica</p>
             <p>BS.EEE at North South University</p>
         </section> -->
+        <section class="column-h-text">
+            <div class="title-subtitles">
+                <h2>Projects</h2>
+            </div>
+            <div class="column-h-text-div">
+                <div class="column-h-text-item">
+                    <h3>Stagger</h3>
+                    <p class="subtitle">Automatic Metadata Retriever for Offline Music Files (MP3 and FLAC)</p>
+                    <p>
+                        As someone who used to hoard thousands of online songs, I needed a way to keep it organized, so
+                        I retrieved song metadata from partial tags, which I got from my source, and filled it the rest
+                        of it through the Spotify API, and used Mutagen to write the tags to the files using Python.
+                    </p>
+                    <a href="#">Learn More...</a>
+                </div>
+                <div class="column-h-text-item">
+                    <h3>Pseudo-<br>Interpreter</h3>
+                    <p class="subtitle">Transpiler for Cambridge's O' and A' Level Pseudocode</p>
+                    <p>
+                        Back in high school, I had a tough time learning pseudocode, because even though it had a pretty
+                        defined syntax, I couldn't execute it, since it's not a real language. I learn through
+                        experimentation, therefore not being able to execute the code was hindering my learning. So
+                        naturally, I made a transpiler for it which would transpile the pseudocode to python, therefore
+                        making it executable.
+                    </p>
+                    <a href="#">Learn More...</a>
+                </div>
+                <div class="column-h-text-item">
+                    <h3>RoboSoccer</h3>
+                    <p class="subtitle">A radio-controlled soccer bot</p>
+                    <p>
+                        This is my first ever robotics project, done during <a href="#north-south-event">NSU
+                            TechFest</a>. After the workshop introduced me to some fundamentals like how motors work, or
+                        what sort of batteries to use, I, in collaboration with <span class="inline-button"
+                            id="apu-appreciation" tabindex="0" role="button" aria-pressed="false">a certain senior
+                            friend I made along the way</span>, made my own soccer bot. I also learned to use AutoCAD
+                        and Fusion 360 to design a custom chassis.
+                    </p>
+                    <a href="#">Learn More...</a>
+                </div>
+            </div>
+        </section>
         <section class="column-h-text">
             <div class="title-subtitles">
                 <h2>Event Participation</h2>
@@ -116,7 +153,7 @@
                     </p>
                     <a href="#">Learn More...</a>
                 </div>
-                <div class="column-h-text-item">
+                <div class="column-h-text-item" id="north-south-event">
                     <p class="subtitle">North South University - 2025</p>
                     <h3>NSU TechFest</h3>
                     <p class="subtitle">Participated in Robotics Segment</p>

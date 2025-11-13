@@ -39,3 +39,23 @@ document.getElementById("down-arrow").addEventListener('click', () => {
         behavior: "smooth"
     })
 })
+
+// Apu appreciation button
+const thank_you_text = "Thank you so much, dear grandma for everything. You and grandpa are the closest " +
+    "I am with anyone in this university. You've been unwaveringly there for me ever " +
+    "since the start, witnessing me being silly, without any filter, and tolerating my " +
+    "ever-worsening state of attendance. Thank you for listening to all my ranting, all " +
+    "my unnecessarily verbose blurting, all my \"oh did you know how grandly I messed up " +
+    "today? UwU\" sorta texts outta nowhere. Overall, thank you for being so supportive" +
+    "\n\n" +
+    "If grandpa is also reading this, thank you too for allowing me the same privileges, and " +
+    "for your enthusiasm in listening to and for your constructive feedback on all the nerdy stuff " +
+    "and overly ambitious plans that I discuss about but almost never end up implementing (I promise " +
+    "I will do it, sooner than later)." +
+    "\n\n" +
+    "Overall, thank you both for being so supportive. It's unfortunate that we don't get to meet " +
+    "as often as we used to before because of conflicting schedules, but I hope to make up for it soon. " +
+    "Here's to many more years of being this well acquainted together :D"
+document.getElementById("apu-appreciation").addEventListener('click', () => {
+    window.alert(thank_you_text)
+})
