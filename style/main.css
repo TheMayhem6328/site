@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap");
-
 html {
   box-sizing: border-box;
 }
@@ -127,15 +125,18 @@ picture#down-arrow {
   position: absolute;
   animation-name: bounce-hint-down;
   animation-duration: 2000ms;
+  animation-delay: 500ms;
   animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
   animation-iteration-count: infinite;
   cursor: pointer;
+  scale: 90%;
+  filter: opacity(40%);
 }
 
 @keyframes bounce-hint-down {
   0% {
     transform: translateY(0dvh);
-    filter: opacity(40%) blur(3px);
+    filter: opacity(40%);
     scale: 90%;
   }
   40% {
@@ -147,7 +148,7 @@ picture#down-arrow {
   }
   100% {
     transform: translateY(0dvh);
-    filter: opacity(40%) blur(3px);
+    filter: opacity(40%);
     scale: 90%;
   }
 }
@@ -176,10 +177,8 @@ main {
     p {
       font-weight: 400;
       font-size: clamp(1.25rem, 1.1111rem + 0.7407vw, 2rem);
-      text-align: justify;
       &.subtitle {
         font-size: clamp(0.75rem, 0.6111rem + 0.7407vw, 1.5rem);
-        text-align: unset;
       }
     }
 
@@ -235,19 +234,19 @@ main {
   @keyframes bounce-hint-down {
     0% {
       transform: translateY(0%);
-      filter: opacity(40%) blur(3px);
+      filter: opacity(40%);
       scale: 90%;
     }
     40% {
       transform: translateY(1vh);
-      filter: opacity(100%) blur(0px);
+      filter: opacity(100%);
       scale: 100%;
     }
     60% {
     }
     100% {
       transform: translateY(0%);
-      filter: opacity(40%) blur(3px);
+      filter: opacity(40%);
       scale: 90%;
     }
   }
