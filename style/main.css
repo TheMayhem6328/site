@@ -178,6 +178,7 @@ main {
     flex-direction: column;
     font-family: "Pixelify Sans", sans-serif;
     color: #c9f2ce;
+
     h2 {
       font-weight: 700;
       font-size: clamp(3rem, 2.4444rem + 2.963vw, 6rem);
@@ -191,9 +192,11 @@ main {
     p {
       font-weight: 400;
       font-size: clamp(1.25rem, 1.1111rem + 0.7407vw, 2rem);
+
       &.subtitle {
         font-size: clamp(0.75rem, 0.6111rem + 0.7407vw, 1.5rem);
       }
+
       a,
       span.inline-button {
         font-size: inherit;
@@ -217,32 +220,62 @@ main {
       text-align: center;
     }
 
-    &.column-h-text {
+    div.title-subtitles {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
+      justify-content: center;
+
+      p {
+        text-align: center;
+      }
+    }
+
+    &.column {
       display: flex;
       flex-direction: column;
       gap: 50px;
       align-items: center;
       justify-content: center;
-      div.title-subtitles {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        align-items: center;
-        justify-content: center;
-      }
 
-      div.column-h-text-div {
+      div.contents {
         display: flex;
         justify-content: center;
         flex-direction: row;
         flex-wrap: wrap;
         gap: 50px;
-        div.column-h-text-item {
+
+        div.item {
           width: 100%;
           display: flex;
           max-width: 500px;
           flex-direction: column;
           gap: 15px;
+        }
+      }
+    }
+
+    &.column.vertical {
+      flex-direction: row;
+      align-items: start;
+
+      div.title-subtitles {
+        align-items: start;
+        position: sticky;
+        top: 0%;
+
+        p {
+          text-align: start;
+        }
+      }
+
+      div.contents {
+        justify-content: start;
+        flex-direction: column;
+
+        div.item {
+          max-width: initial;
         }
       }
     }
@@ -290,6 +323,36 @@ main {
         }
         p {
           font-size: 48px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1150px) {
+  main {
+    section {
+      &.column.vertical {
+        flex-direction: column;
+        align-items: center;
+
+        div.title-subtitles {
+          align-items: center;
+          position: initial;
+          top: unset;
+
+          p {
+            text-align: center;
+          }
+        }
+
+        div.contents {
+          flex-direction: column;
+          justify-content: center;
+
+          div.item {
+            max-width: 500px;
+          }
         }
       }
     }
