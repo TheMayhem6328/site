@@ -207,17 +207,27 @@ main {
 
     a,
     span.inline-button {
-      text-decoration-line: underline;
-      text-decoration-thickness: 1px;
-      text-underline-offset: 2px;
       font-size: clamp(1rem, 0.8148rem + 0.9877vw, 2rem);
       font-weight: 500;
       color: #e6e6e6;
+      transition: color 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+      width: fit-content;
+      text-decoration: none;
+
+      &:hover {
+        color: #aaaaaa;
+        text-decoration: underline;
+      }
+
+      &:active {
+        transition: color 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+        color: #787878;
+      }
     }
 
     &.title-subtitles {
-      align-items: center;
       gap: 10px;
+      align-items: center;
       text-align: center;
     }
 
@@ -227,10 +237,8 @@ main {
       gap: 15px;
       align-items: center;
       justify-content: center;
-
-      p {
-        text-align: center;
-      }
+      text-align: center;
+      max-width: min-content;
     }
 
     &.column {
@@ -309,6 +317,16 @@ main {
   }
 }
 
+@media (max-width: 1699px) {
+  main {
+    section {
+      &.column.vertical {
+        max-width: 1050px;
+      }
+    }
+  }
+}
+
 @media (max-width: 1200px) {
   header#root-header {
     section#root-hero {
@@ -330,7 +348,7 @@ main {
   }
 }
 
-@media (max-width: 1150px) {
+@media (max-width: 1149px) {
   main {
     section {
       &.column.vertical {
